@@ -7,50 +7,69 @@
     tools:context="org.zyzz.myapplication.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="changeColor"
-            android:text="ChangeColor"
-            android:textSize="26sp" />
-
-        <TextView
-            android:id="@+id/txvR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="R:"
+            android:layout_above="@+id/txv"
+            android:layout_centerHorizontal="true"
+            android:onClick="show"
+            android:text="确定"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txvG"
-            android:layout_width="match_parent"
+            android:id="@+id/txv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="G:"
-            android:textSize="20sp" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Hello World!"
+            android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/txvB"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/ticketType"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B:"
-            android:textSize="20sp" />
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btn"
+            android:padding="5dp">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </LinearLayout>
+            <RadioButton
+                android:id="@+id/adult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/child"
+                android:layout_below="@+id/ticketType"
+                android:layout_marginTop="52dp"
+                android:layout_weight="1"
+                android:text="全票" />
 
+            <RadioButton
+                android:id="@+id/child"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/senior"
+                android:layout_below="@+id/adult"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:text="半票" />
+
+            <RadioButton
+                android:id="@+id/senior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btn"
+                android:layout_below="@+id/child"
+                android:layout_marginTop="13dp"
+                android:layout_weight="1"
+                android:text="敬老票" />
+        </RadioGroup>
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
